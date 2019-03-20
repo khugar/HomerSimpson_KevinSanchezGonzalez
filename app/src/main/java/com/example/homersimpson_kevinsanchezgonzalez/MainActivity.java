@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (player.isPlaying()) {
-                    player.stop();
+                    player.pause();
                 } else {
                     player.start();
                 }

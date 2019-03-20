@@ -81,10 +81,10 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ivHomer"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/theSimpsonsTitle"
-        app:layout_constraintVertical_bias="0.412"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/donut" />
 
     <ImageView

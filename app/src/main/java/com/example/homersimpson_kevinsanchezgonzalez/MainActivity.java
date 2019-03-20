@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     boolean visible, sonando;
     ImageView Blau, Verd, Vermell, Ull, Donut;
     AnimationDrawable simpsonsTitle;
-    Animation engranatgeBlau,engranatgeVerd,engranatgeVermell,rotacioUll;
+    Animation engranatgeBlau,engranatgeVerd,engranatgeVermell,rotacioUll,rotacioDonut;
 
 
     @Override
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         engranatgeVerd = AnimationUtils.loadAnimation(this,R.anim.engranatge_verd);
         engranatgeVermell = AnimationUtils.loadAnimation(this,R.anim.engranatge_vermell);
         rotacioUll = AnimationUtils.loadAnimation(this,R.anim.rotacio_ull);
+        rotacioDonut = AnimationUtils.loadAnimation(this,R.anim.rotacio_donut);
 
 
 
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     Verd.startAnimation(engranatgeVerd);
                     Vermell.startAnimation(engranatgeVermell);
                     Ull.startAnimation(rotacioUll);
+                    Donut.startAnimation(rotacioDonut);
                     Blau.setVisibility(View.VISIBLE);
                     Verd.setVisibility(View.VISIBLE);
                     Vermell.setVisibility(View.VISIBLE);
@@ -77,13 +79,22 @@ public class MainActivity extends AppCompatActivity {
                     Donut.setVisibility(View.VISIBLE);
                     visible = true;
                 } else {
+                    Blau.clearAnimation();
+                    Verd.clearAnimation();
+                    Vermell.clearAnimation();
+                    Donut.clearAnimation();
+                    Ull.clearAnimation();
+                    Blau.animate().cancel();
+                    Verd.animate().cancel();
+                    Vermell.animate().cancel();
+                    Donut.animate().cancel();
+                    Ull.animate().cancel();
 
                     Blau.setVisibility(View.INVISIBLE);
                     Vermell.setVisibility(View.INVISIBLE);
                     Verd.setVisibility(View.INVISIBLE);
                     Ull.setVisibility(View.INVISIBLE);
                     Donut.setVisibility(View.INVISIBLE);
-                    Blau.animate().cancel();
 
                     visible = false;
 

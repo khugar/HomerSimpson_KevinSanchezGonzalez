@@ -3,7 +3,7 @@
     <rotate xmlns:app="http://schemas.android.com/apk/res-auto"
         android:pivotY="50%"
         android:pivotX="50%"
-        android:fromDegrees="0"
+        android:fromDegrees="-360"
         android:toDegrees="360"
         android:duration="1000"
         android:repeatCount="infinite"

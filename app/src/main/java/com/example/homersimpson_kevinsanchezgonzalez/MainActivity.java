@@ -2,13 +2,16 @@ package com.example.homersimpson_kevinsanchezgonzalez;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
+import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-    boolean visible;
+    MediaPlayer player;
+    boolean visible,sonando;
     ImageView Blau, Verd, Vermell, Ull, Donut;
     AnimationDrawable simpsonsTitle;
 
@@ -26,12 +29,27 @@ public class MainActivity extends AppCompatActivity {
         final ImageView Ull = (ImageView)findViewById(R.id.ivUll);
         final ImageView Donut = (ImageView)findViewById(R.id.ivDonut);
 
+        player = MediaPlayer.create(this,R.raw.the_simpsons);
+
         Blau.setVisibility(View.INVISIBLE);
         Vermell.setVisibility(View.INVISIBLE);
         Verd.setVisibility(View.INVISIBLE);
         Ull.setVisibility(View.INVISIBLE);
         Donut.setVisibility(View.INVISIBLE);
         visible = false;
+        sonando = false;
+
+        Donut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(sonando==false){
+                    player.start();
+                    sonando=true;
+                }else if(sonando=true){
+                player.stop();
+                sonando=false;}
+            }
+        });
 
         titol.setOnClickListener(new View.OnClickListener() {
             @Override

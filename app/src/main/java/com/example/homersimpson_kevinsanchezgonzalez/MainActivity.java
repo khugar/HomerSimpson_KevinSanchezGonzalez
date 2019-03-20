@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     boolean visible, sonando;
     ImageView Blau, Verd, Vermell, Ull, Donut;
     AnimationDrawable simpsonsTitle;
-    Animation engranatgeBlau,engranatgeVerd,engranatgeVermell;
+    Animation engranatgeBlau,engranatgeVerd,engranatgeVermell,rotacioUll;
 
 
     @Override
@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         engranatgeBlau = AnimationUtils.loadAnimation(this,R.anim.engranatge_blau);
         engranatgeVerd = AnimationUtils.loadAnimation(this,R.anim.engranatge_verd);
         engranatgeVermell = AnimationUtils.loadAnimation(this,R.anim.engranatge_vermell);
+        rotacioUll = AnimationUtils.loadAnimation(this,R.anim.rotacio_ull);
+
+
 
         Donut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     Blau.startAnimation(engranatgeBlau);
                     Verd.startAnimation(engranatgeVerd);
                     Vermell.startAnimation(engranatgeVermell);
+                    Ull.startAnimation(rotacioUll);
                     Blau.setVisibility(View.VISIBLE);
                     Verd.setVisibility(View.VISIBLE);
                     Vermell.setVisibility(View.VISIBLE);
